@@ -64,7 +64,11 @@ export const NewTask = ({ addTask, isError }) => {
         >
           Create Task
         </button>
-        {isError && <p className="text-red-500 font-semibold">Task name is already in use.</p>}
+        {isError && (
+          <p className="text-red-500 font-semibold">
+            Task name is already in use.
+          </p>
+        )}
       </form>
     </div>
   );

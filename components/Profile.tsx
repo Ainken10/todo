@@ -1,6 +1,5 @@
 import React from "react";
-import { BellIcon } from "@heroicons/react/outline";
-export const Profile = ({Counts}) => {
+export const Profile = ({ Counts }) => {
   return (
     <div className="w-1/5 hidden md:block min-h-screen shadow-lg">
       <div className="w-full flex flex-col items-center justify-center my-10 space-y-4">

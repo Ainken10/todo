@@ -1,5 +1,4 @@
 import React from "react";
-import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/outline";
 import { Task } from "./Task";
 export const Tasks = ({ tasks, removeTask, updateTask }) => {
   return (
