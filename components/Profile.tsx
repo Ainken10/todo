@@ -1,5 +1,11 @@
 import React from "react";
-export const Profile = ({ Counts }) => {
+import Counts from "../interfaces/Counts";
+
+interface props {
+  Counts: Counts;
+}
+
+export const Profile: React.FC<props> = ({ Counts }) => {
   return (
     <div className="w-1/5 hidden md:block min-h-screen shadow-lg">
       <div className="w-full flex flex-col items-center justify-center my-10 space-y-4">

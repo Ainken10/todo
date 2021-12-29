@@ -1,11 +1,17 @@
 import React from "react";
 import { useState } from "react";
+import Task from "../interfaces/Task";
+interface props {
+  addTask: (Task) => void;
+  isError: boolean;
+}
 
-export const NewTask = ({ addTask, isError }) => {
-  const [name, setName] = useState("");
-  const [isPriority, setIsPriority] = useState(false);
+export const NewTask: React.FC<props> = ({ addTask, isError }) => {
   const today = new Date();
-  const [date, setDate] = useState(today.toISOString().split("T")[0]);
+
+  const [name, setName] = useState<string>("");
+  const [isPriority, setIsPriority] = useState<boolean>(false);
+  const [date, setDate] = useState<string>(today.toISOString().split("T")[0]);
 
   return (
     <div className="w-full md:w-2/5 min-h-screen bg-green-300 p-5">
@@ -37,9 +43,8 @@ export const NewTask = ({ addTask, isError }) => {
           name="isPriority"
           id="isPriority"
           onChange={(e) => {
-            setIsPriority(e.target.value);
+            setIsPriority(e.target.value === "true");
           }}
-          value={isPriority}
           required
           className="focus:bg-white w-full rounded-md p-2  focus:border-white focus:outline-none"
         >

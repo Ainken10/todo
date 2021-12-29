@@ -1,7 +1,14 @@
 import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/outline";
 import React from "react";
+import Task from "../interfaces/Task";
 
-export const Task = ({ task, removeTask, updateTask }) => {
+interface props {
+  task: Task;
+  removeTask: (name: string) => void;
+  updateTask: (name: string) => void;
+}
+
+export const Task: React.FC<props> = ({ task, removeTask, updateTask }) => {
   return (
     <div className="rounded-lg h-20 w-full border-2 border-green-300 shadow-green-300 shadow-sm p-4 flex items-center justify-between ">
       <div
@@ -23,7 +30,9 @@ export const Task = ({ task, removeTask, updateTask }) => {
               High
             </p>
           )}
-          <p className="text-orange-400 font-semibold">{task.dueDate}</p>
+          <p className="text-orange-400 font-semibold">
+            {new Date(task.dueDate).toLocaleDateString()}
+          </p>
         </div>
       </div>
       <div
